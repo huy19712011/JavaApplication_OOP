@@ -16,10 +16,10 @@ public class Main {
      */
     public static void main(String[] args) {
 //        System.out.println("Hello Inheritance");
-        Programmer p1 = new Programmer("John", "Address 1", "Phone 1", new String[] {"Java", "PHP"});
+        Employee p1 = new Programmer("John", "Address 1", "Phone 1", new String[] {"Java", "PHP"});
         p1.work();
         
-        Manager m1 = new Manager("Mike", "Address 2", "Phone 2", 4);
+        Employee m1 = new Manager("Mike", "Address 2", "Phone 2", 4);
         m1.work();
     }
     
