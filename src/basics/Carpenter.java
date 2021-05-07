@@ -9,10 +9,20 @@ package basics;
  *
  * @author huynq
  */
-public class Carpenter extends Worker {
+public class Carpenter extends Worker implements IRunner, IDancer {
     
     @Override
     public void doWork() {
         System.out.println("I create table");
+    }
+
+    @Override
+    public void run() {
+        System.out.println("Carpenter is running...");
+    }
+
+    @Override
+    public void dance() {
+        System.out.println("Carpenter is dancing...");
     }
 }
