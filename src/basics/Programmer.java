@@ -20,6 +20,7 @@ public class Programmer extends Employee {
     }
 
     
+    @Override
     public void work() {
         System.out.println("I am a programmer, i code...");
     }

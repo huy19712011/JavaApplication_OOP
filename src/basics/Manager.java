@@ -18,6 +18,7 @@ public class Manager extends Employee {
         this.teamSize = teamSize;
     }
     
+    @Override
     public void work() {
         System.out.println("I am manager, i manage teams of " + teamSize);
     }
