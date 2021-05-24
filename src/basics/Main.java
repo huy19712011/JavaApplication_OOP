@@ -20,6 +20,7 @@ public class Main {
         p1.work();
 //        p1.run(); // invalid
         
+        
         Employee m1 = new Manager("Mike", "Address 2", "Phone 2", 4);
         m1.work();
         
@@ -32,6 +33,10 @@ public class Main {
         
         IDancer d1 = new Programmer("Mike", "Address 4", "Phone 4", new String[] {"Java", "PHP"});
         d1.dance();
+        
+        IRunner d2 = new Programmer("Mike", "Address 5", "Phone 5", new String[] {"Java", "PHP"});
+        d2.show();
+        System.out.println(d2.i);
         
     }
     

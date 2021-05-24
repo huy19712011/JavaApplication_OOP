@@ -10,5 +10,11 @@ package basics;
  * @author huynq
  */
 public interface IRunner {
+    int i = 10;
+    
     void run();
+
+    default void show() {
+        System.out.println("I show code...");
+    }
 }
