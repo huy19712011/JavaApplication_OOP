@@ -23,18 +23,12 @@ public class Main {
         DatabaseConnectionManager dcm
                 = new DatabaseConnectionManager("localhost:3306", "demo", "root", "123456");
 
-        Connection connection = null;
-        Statement statement = null;
-        ResultSet resultSet = null;
+//        Connection connection = null;
+//        Statement statement = null;
+//        ResultSet resultSet = null;
+        String sql = "SELECT * FROM employees";
 
-        try {
-
-            connection = dcm.getConnection();
-            statement = connection.createStatement();
-
-            String sql = "SELECT * FROM employees";
-
-            resultSet = statement.executeQuery(sql);
+        try ( Connection connection = dcm.getConnection();  Statement statement = connection.createStatement();  ResultSet resultSet = statement.executeQuery(sql);) {
 
             while (resultSet.next()) {
                 System.out.println(resultSet.getString("email"));
@@ -44,30 +38,31 @@ public class Main {
 
             e.printStackTrace(System.err);
 
-        } finally {
-
-            close(connection, statement, resultSet);
         }
+//        finally {
+//
+//            close(connection, statement, resultSet);
+//        }
 
     }
 
-    private static void close(Connection connection, Statement statement, ResultSet resultSet) {
-        try {
-
-            if (resultSet != null) {
-                resultSet.close();
-            }
-
-            if (statement != null) {
-                statement.close();
-            }
-
-            if (connection != null) {
-                connection.close();
-            }
-
-        } catch (SQLException e) {
-            e.printStackTrace(System.err);
-        }
-    }
+//    private static void close(Connection connection, Statement statement, ResultSet resultSet) {
+//        try {
+//
+//            if (resultSet != null) {
+//                resultSet.close();
+//            }
+//
+//            if (statement != null) {
+//                statement.close();
+//            }
+//
+//            if (connection != null) {
+//                connection.close();
+//            }
+//
+//        } catch (SQLException e) {
+//            e.printStackTrace(System.err);
+//        }
+//    }
 }
