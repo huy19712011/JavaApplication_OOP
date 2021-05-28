@@ -31,8 +31,8 @@ public class Engineer extends User {
         return this.duration * this.unitPrice;
     }
 
-    @Override
-    public Engineer createObject(ResultSet resultSet) throws SQLException {
+//    @Override
+    public static Engineer createObject(ResultSet resultSet) throws SQLException {
 
         int dur = resultSet.getInt("duration");
         int id = resultSet.getInt("id");

@@ -28,5 +28,8 @@ public abstract class User {
 
     public abstract float calculateFee();
 
-    public abstract User createObject(ResultSet resultSet) throws SQLException;
+//    public abstract User createObject(ResultSet resultSet) throws SQLException;
+    public static User createObject(ResultSet resultSet) throws SQLException {
+        return null;
+    }
 }

@@ -28,13 +28,13 @@ public class Main {
 //        ResultSet resultSet = null;
         String sql = "SELECT * FROM employees";
 
-        try (  Connection connection = dcm.getConnection();  Statement statement = connection.createStatement();  ResultSet resultSet = statement.executeQuery(sql); ) {
+        try ( Connection connection = dcm.getConnection();  Statement statement = connection.createStatement();  ResultSet resultSet = statement.executeQuery(sql);) {
 
             while (resultSet.next()) {
                 System.out.println(resultSet.getString("email"));
             }
 
-        } catch ( SQLException e ) {
+        } catch (SQLException e) {
 
             e.printStackTrace(System.err);
 

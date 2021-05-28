@@ -35,8 +35,8 @@ public class Student extends User {
 
     }
 
-    @Override
-    public Student createObject(ResultSet resultSet) throws SQLException {
+//    @Override
+    public static Student createObject(ResultSet resultSet) throws SQLException {
 
         int id = resultSet.getInt("id");
         String name = resultSet.getString("first_name");

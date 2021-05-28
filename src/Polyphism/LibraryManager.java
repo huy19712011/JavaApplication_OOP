@@ -33,13 +33,15 @@ public class LibraryManager {
 
                     if (type == 2) { // engineer
 
-                        this.listReaders.add(new Engineer().createObject(resultSet));
+//                        this.listReaders.add(new Engineer().createObject(resultSet));
+                        this.listReaders.add(Engineer.createObject(resultSet));
 
                     }
 
                     if (type == 1) { // student
 
-                        this.listReaders.add(new Student().createObject(resultSet));
+//                        this.listReaders.add(new Student().createObject(resultSet));
+                        this.listReaders.add(Student.createObject(resultSet));
 
                     }
 
