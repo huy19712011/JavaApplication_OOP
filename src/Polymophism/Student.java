@@ -3,43 +3,47 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package Polyphism;
+package Polymophism;
 
 import java.sql.ResultSet;
-import java.sql.SQLException;
+import java.sql.*;
 
 /**
  *
  * @author huynq
  */
-public class Engineer extends User {
+public class Student extends User {
 
-    private int duration;
-    private float unitPrice = 50_000f;
+    private String studentId;
 
-    public Engineer() {
-
+    public Student(String studentId, int id, String name, String email) {
+        super(id, name, email);
+        this.studentId = studentId;
     }
 
-    public Engineer(int duration, int id, String name, String email) {
+    public Student() {
+    }
+
+    public Student(int id, String name, String email) {
         super(id, name, email);
-        this.duration = duration;
     }
 
     @Override
     public float calculateFee() {
-        return this.duration * this.unitPrice;
+
+        return 20_000f;
+
     }
 
 //    @Override
-    public static Engineer createObject(ResultSet resultSet) throws SQLException {
+    public static Student createObject(ResultSet resultSet) throws SQLException {
 
-        int dur = resultSet.getInt("duration");
         int id = resultSet.getInt("id");
         String name = resultSet.getString("first_name");
         String email = resultSet.getString("email");
 
-        return new Engineer(dur, id, name, email);
+        return new Student(id, name, email);
+
     }
 
 }
